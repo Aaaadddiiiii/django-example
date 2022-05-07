@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'Revisionapp/base.html' %}
+{% load my_filter %}
+{% block body_block %}
+    <div class="container backg">
+      <h1>This is indeed the form page!</h1>
+      <h1>{{ just|cooler }}</h1>
+      <h2>Go to <a href="{% url 'Revisionapp:usersignup' %}">Sign up here</a> if you want to sign up</h2>
+      {% if vk %}
+        <table>
+          <thead>
+            <th>Visitor's name</th>
+            <th>Visitor's email</th>
+            <th>Visitor's age</th>
+          </thead>
+          <tbody>
+            {% for a in vk %}
+            <tr>
+              <td>Name: {{ a.visitorname }}</td>
+              <td>Email: {{ a.visitoremail }}</td>
+              <td>Age: {{ a.visitorage }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    </div>
+{% endblock %}

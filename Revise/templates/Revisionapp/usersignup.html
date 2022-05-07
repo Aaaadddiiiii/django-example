@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'Revisionapp/base.html' %}
+{% block body_block %}
+    <div class="container blackg">
+      <h1>Fill up the user form here!</h1>
+      <h2>You can go to <a href="{% url 'admin:index' %}">admin page</a>from here</h2>
+      <h2>You can go to <a href="{% url 'index' %}">index page</a> from here and <a href="{% url 'Revisionapp:formpage' %}">user list</a> page from here </h2>
+      <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+    </div>
+{% endblock %}

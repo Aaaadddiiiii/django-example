@@ -1,0 +1,8 @@
+body{
+  color: pink;
+  background-image: url(https://bestlifeonline.com/wp-content/uploads/sites/3/2019/07/cow-sticking-tongue-out.jpg?quality=82&strip=all);
+  background-repeat: no-repeat;
+}
+table, th, td{
+  border: 2px solid black;
+}

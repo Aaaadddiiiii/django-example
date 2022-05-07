@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+      <a class="navbar-brand" href="{% url 'index' %}">Gaiyya</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'Revisionapp:usersignup' %}">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Revisionapp:formpage' %}">Users list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Revisionapp:register' %}">Register</a>
+        </li>
+
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Revisionapp:user_login' %}">Login</a>
+          </li>
+        {% endif %}
+
+      </ul>
+    </nav>
+    {% block body_block %}
+      <h1>This won't be inherited</h1>
+    {% endblock %}
+  </body>
+</html>

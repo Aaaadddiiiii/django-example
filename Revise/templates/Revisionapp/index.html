@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'Revisionapp/base.html' %}
+{% load my_extras %}
+{% block body_block %}
+  <div class="container">
+    <h1>This is the index page!</h1>
+    <h1 class="backg">Go to <a href="{% url 'Revisionapp:formpage' %}">All users page</a> for a table of all the available users.</h1>
+    <h1>{{ text }}</h1>
+    <h1>{{ number }}</h1>
+  </div>
+{% endblock %}
